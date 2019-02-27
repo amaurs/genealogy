@@ -16,8 +16,17 @@
 
 .link {
   fill: none;
-  stroke: #ccc;
+  stroke: red;
   stroke-width: 2px;
+  opacity: 0.3;
+}
+
+.name {
+  font-size: 12px
+}
+
+.university {
+  font-size: 8px 
 }
 
 </style>
@@ -27,7 +36,7 @@
 
     var margin = {top: 20, right: 90, bottom: 30, left: 90},
         width = 12000 - margin.left - margin.right,
-        height = 8000 - margin.top - margin.bottom;
+        height = 4000 - margin.top - margin.bottom;
 
     var svg = d3.select("body").append("svg")
         .attr("width", width + margin.right + margin.left)
@@ -136,11 +145,13 @@
             });
 
         text.append('tspan')
+            .attr('class', 'name')
             .text(function(d) { return d.data.name })
             .attr('x', 0);
             ;
 
         text.append('tspan')
+            .attr('class', 'university')
             .text(function(d) { return d.data.university })
             .attr('dy', '1em')
             .attr('x', 0);
@@ -156,7 +167,7 @@
             });
         // Update the node attributes and style
         nodeUpdate.select('circle.node')
-            .attr('r', 10)
+            .attr('r', 1e-6)
             .style("fill", function(d) {
                 return d._children ? "lightsteelblue" : "#fff";
             })
@@ -221,8 +232,8 @@
         function diagonal(s, d) {
 
             path = `M ${s.x} ${s.y}
-                    C ${(s.x + d.x) / 2} ${s.y},
-                      ${(s.x + d.x) / 2} ${d.y},
+                    C ${(s.x + d.x) / 2} ${d.y},
+                      ${(s.x + d.x) / 2} ${s.y},
                       ${d.x} ${d.y}`
             return path
         }
