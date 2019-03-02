@@ -44,8 +44,8 @@
     var svg = svgContainer.append("g")
         .attr("transform", "translate(" + 0 + "," + 0 + ")");
 
-    var width = 500,
-        height = 500;
+    var width = 4000,
+        height = 4000;
 
 
     var treemap = d3.tree().size([height, width]);
@@ -66,23 +66,21 @@
 
     function vh(v) {
         var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-        if(v == 100) {
-            return h;
-        }
+        
         return (v * h) / 100;
     }
 
     function vw(v) {
         var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        if(v == 100) {
-            return w;
-        }
+        
         return (v * w) / 100;
     }
 
 
     d3.json("genealogy.json", function(error, data) {
         console.log(data);
+
+        clean(data)
 
         root = d3.hierarchy(data, function(d) { return d.children; });
         root.x0 = height / 2;
@@ -108,7 +106,6 @@
         // Compute the new tree layout.
         var nodes = treeData.descendants(),
             links = treeData.descendants().slice(1);
-
         // Normalize for fixed-depth.
 
         var years = nodes.map(function(d){ return parseInt(d.data.year) });
@@ -124,7 +121,6 @@
         var x = d3.scaleLinear()
                   .domain([min, max])
                   .range([0, height]);
-
         nodes.forEach(function(d){ d.y = x(parseInt(d.data.year))});
 
         // Update the nodes...
@@ -241,7 +237,6 @@
 
         // Creates a curved (diagonal) path from parent to the child nodes
         function diagonal(s, d) {
-
             path = `M ${s.x} ${s.y}
                     C ${(s.x + d.x) / 2} ${d.y},
                       ${(s.x + d.x) / 2} ${s.y},
