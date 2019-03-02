@@ -34,7 +34,7 @@ def start(url):
 
 def get_nodes(node_id):
     node = {}
-    node['id'] = node_id
+    node['gen_id'] = node_id
     node['name'] = all_info[node_id]['name']
     node['university'] = all_info[node_id]['school']
     node['dissertation'] = all_info[node_id]['title']

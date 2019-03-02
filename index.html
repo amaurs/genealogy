@@ -18,15 +18,22 @@
   fill: none;
   stroke: red;
   stroke-width: 2px;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 .name {
-  font-size: 12px
+  font-size: 8px
 }
 
 .university {
-  font-size: 8px 
+  font-size: 4px 
+}
+
+.tag text{
+    font-size: 42px;
+    opacity: 0.5;
+    fill: red;
+    font-family: "Futura";
 }
 
 </style>
@@ -44,8 +51,12 @@
     var svg = svgContainer.append("g")
         .attr("transform", "translate(" + 0 + "," + 0 + ")");
 
-    var width = 4000,
-        height = 4000;
+
+
+
+
+    var width = 3000,
+        height = 2000;
 
 
     var treemap = d3.tree().size([height, width]);
@@ -100,6 +111,25 @@
       }
     }
 
+    function myRange(start, edge, step) {
+        // If only 1 number passed make it the edge and 0 the start
+        if (arguments.length === 1) {
+            edge = start;
+            start = 0;
+        }
+      
+        // Validate edge/start
+        edge = edge || 0;
+        step = step || 1;
+      
+        // Create array of numbers, stopping before the edge
+        let arr = [];
+        for (arr; (edge - start) * step > 0; start += step) {
+            arr.push(start);
+        }
+        return arr;
+    }
+
     function update(source) {
         var treeData = treemap(root);
 
@@ -114,6 +144,14 @@
         var min = Math.min(...years);
         var max = Math.max(...years);
 
+
+
+
+
+        
+        
+
+
         var range = max - min;
 
         var step = range / treeData.height;
@@ -121,7 +159,30 @@
         var x = d3.scaleLinear()
                   .domain([min, max])
                   .range([0, height]);
-        nodes.forEach(function(d){ d.y = x(parseInt(d.data.year))});
+        nodes.forEach(function(d){ d.y = x(parseInt(d.data.year));
+                                   d.x = d.x + 100; });
+
+
+
+
+
+        var tags = myRange(min, max, 100);
+
+        console.log(tags);
+        
+
+        svg.selectAll('g')
+            .data(tags)
+            .enter()
+            .append('g')
+            .attr('class', 'tag')
+            .attr("transform", function(d) {
+                return "translate(0," + x(d) + ")";
+            })
+            .append('text')
+            .text(function(d) {
+                return  d});
+
 
         // Update the nodes...
         var node = svg.selectAll('g.node')
@@ -133,23 +194,30 @@
                 return "translate(" + source.y0 + "," + source.x0 + ")";
             });
 
+
+        var container = nodeEnter.append("a")
+            .attr("xlink:href", function(d){ return "https://www.genealogy.math.ndsu.nodak.edu/id.php?id=" + d.data.gen_id });
+
+
         // Add Circle for the nodes
-        nodeEnter.append('circle')
+        container.append('circle')
             .attr('class', 'node')
-            .attr('r', 1e-6)
+            .attr('r', 10)
             .style("fill", function(d) {
                 return d._children ? "red" : "#fff";
         })
         .on('click', click);
 
+
               // Add labels for the nodes
-        var text = nodeEnter.append('text')
+        var text = container.append('text')
             .attr("x", function(d) {
                 return  0;
             })
             .attr("text-anchor", function(d) {
                 return "start";
-            });
+            })
+
 
         text.append('tspan')
             .attr('class', 'name')
@@ -259,11 +327,7 @@
 
     }
     
-    svgContainer.append("rect")
-    .attr("fill", "none")
-    .attr("pointer-events", "all")
-    .attr("width", vw(100))
-    .attr("height", vh(100))
+    svgContainer
     .call(d3.zoom()
         .scaleExtent([1, 8])
         .on("zoom", zoom));
