@@ -28,8 +28,8 @@ def start(url):
         if "Advisor" in paragraph.text:
             for link in paragraph.findAll("a"):
                 new_url = BASE_URL + link['href']
+                parent_child.append({"source": current, "target": new_url.split("=")[1]})
                 if new_url not in visited:
-                    parent_child.append((current, new_url.split("=")[1]))
                     start(new_url)
 
 def get_nodes(node_id):
@@ -47,9 +47,16 @@ def get_nodes(node_id):
 if __name__ == '__main__':
     url = "%s/id.php?id=%s" % (BASE_URL, sys.argv[1])
     start(url)
-    parents, children = zip(*parent_child)
-    root_nodes = {x for x in parents if x not in children}
-    tree = get_nodes(url.split("=")[1])
-    with open('genealogy.json', 'w') as outfile:
-        json.dump(tree, outfile, indent=4)
+    #parents, children = zip(*parent_child)
+    #root_nodes = {x for x in parents if x not in children}
+    #tree = get_nodes(url.split("=")[1])
+
+    #with open('genealogy.json', 'w') as outfile:
+    #    json.dump(tree, outfile, indent=4)
+
+    with open('nodes.json', 'w') as outfile:
+        json.dump(all_info, outfile, indent=4)
+
+    with open('edges.json', 'w') as outfile:
+        json.dump(parent_child, outfile, indent=4)
     print(len(visited))
