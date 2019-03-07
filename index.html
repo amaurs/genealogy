@@ -210,6 +210,9 @@ text {
                 link.source = {x:source.x, y:source.y};
                 link.target = {x:target.x, y:target.y};
 
+                link.sourceId = v;
+                link.targetId = w;
+
                 return link;
             });
 
@@ -232,13 +235,61 @@ text {
 
         var nodeEnter = node.enter().append('g')
             .attr('class', 'node')
+            .attr('id', function(d) { return d.id} )
             .attr("transform", function(d) {
                 return "translate(" + x(+d.x) + "," + y(+d.y) + ")";
             });
 
+        nodeEnter.call(d3.drag().on("drag", dragged));
+
+        function dragged(d) {
+            d.x = d3.event.x, d.y = d3.event.y;
+            console.log(this);
+            console.log("translate(" + x(+d.x) + "," + y(+d.y) + ")");
+
+
+            var transform = d3.select(this).attr("transform");
+
+
+            var id = d3.select(this).attr("id");
+
+            transform = transform.replace("translate(", "");
+
+
+
+            console.log(this);
+
+            d3.select(this).attr("transform", function(d) {
+                return "translate(" + x(+d.x) + "," + transform.split(",")[1];
+            })
+
+            links.forEach(function(link){
+                if(link.sourceId == id){
+                    link.source.x = +d.x;
+                }
+                if(link.targetId == id){
+                    link.target.x = +d.x;
+                }
+            });
+
+
+            var link = svg.selectAll('path.link')
+                .data(links);
+
+            // Transition back to the parent element position
+            link.transition()
+                .duration(0)
+                .attr('d', function(d){
+                    return diagonal(d.source, d.target) });
+
+
+            //link.filter(function(l) { return l.source === d; }).attr("x1", d.x).attr("y1", d.y);
+            //link.filter(function(l) { return l.target === d; }).attr("x2", d.x).attr("y2", d.y);
+        }
+
         var container = nodeEnter.append("a")
-            .attr("xlink:href", function(d){ return "https://www.genealogy.math.ndsu.nodak.edu/id.php?id=" + d.id })
-            .attr("target", "_blank");
+            //.attr("xlink:href", function(d){ return "https://www.genealogy.math.ndsu.nodak.edu/id.php?id=" + d.id })
+            //.attr("target", "_blank");
 
         var text = container.append('text')
             .attr("x", function(d) {
@@ -248,6 +299,7 @@ text {
                 return "start";
             })
 
+        
 
         text.append('tspan')
             .attr('class', 'name')
@@ -261,6 +313,7 @@ text {
             .attr('dy', '1em')
             .attr('x', 0);
 
+        
 
 
         // Update the links...
