@@ -39,7 +39,10 @@
     font-family: "Futura";
 }
 
-
+svg {
+  border-style: solid;
+  border-color: green;
+}
 
 
 text {
@@ -62,24 +65,22 @@ text {
 </style>
 </head>
 <body>
-<svg width="3000px" height="100vh"></svg>
 <script>
-
+    var width = 3000,
+        height = 2500;
     var margin = {top: 20, right: 90, bottom: 30, left: 90};
     
 
-    var svgContainer = d3.select("svg");
-        
-
+    var svgContainer = d3.select("body")
+            .append("svg")
+            .attr('width', width)
+            .attr('height', height);
     var svg = svgContainer.append("g")
         .attr("transform", "translate(" + 0 + "," + 0 + ")");
 
 
 
-
-
-    var width = 3000,
-        height = 2000;
+    
 
 
     var treemap = d3.tree().size([height, width]);
@@ -119,13 +120,26 @@ text {
             g.setDefaultEdgeLabel(function() { return {}; });
 
 
-            Object.entries(nodes).forEach(function([key, value]){
-                
-                g.setNode(key, value);
+            var entries = Object.entries(nodes);
+
+
+            entries = entries.filter(function(entry){
+                var value = entry[1];
+                return !(value.year == "" || value.name == "" || value.school == "");
             });
 
-            edges.forEach(function(edge){
-                g.setEdge(edge.source, edge.target);
+            
+
+            entries.forEach(function([key, value]){
+                if(value){
+                    g.setNode(key, value);
+                }
+            });
+
+            edges.forEach(function(edge){                
+                if(g.hasNode(edge.target) && g.hasNode(edge.source)){
+                    g.setEdge(edge.target, edge.source);
+                }
             })
 
             
@@ -133,33 +147,187 @@ text {
             dagre.layout(g);
 
             console.log(graphlib.json.write(g));
+            console.log(g);
+            //renderDagre(g);
 
-            // Create the renderer
-            var render = new dagreD3.render();
+            var xs = g.nodes().map(function(node) {
+                var label = g.node(node);
+                return label.x;
+            });
+
+            var ys = g.nodes().map(function(node) {
+                var label = g.node(node);
+                return label.y;
+            });
+
+            console.log(Math.min(...xs));
+            console.log(Math.min(...ys));
+
+            console.log(Math.max(...xs));
+            console.log(Math.max(...ys));
+
+
+            var nodez = g.nodes().map(function(node) {
+                var label = g.node(node);
+
+                label.id = node;
+                return label;
+            });
+
             
-            // Set up an SVG group so that we can translate the final graph.
-            var svg = d3.select("svg"),
-                svgGroup = svg.append("g");
-            
-            // Run the renderer. This is what draws the final graph.
-            render(d3.select("svg g"), g);
-            
-            // Center the graph
-            var xCenterOffset = (svg.attr("width") - g.graph().width) / 2;
-            svgGroup.attr("transform", "translate(" + xCenterOffset + ", 20)");
-            svg.attr("height", g.graph().height + 40);
+
+            var maxX = Math.max(...xs);
+            var maxY = Math.max(...ys);
 
 
-            svg.call(d3.zoom()
-                .scaleExtent([1, 5])
-                .on("zoom", zoom));
+            var years = nodez.map(function(d){ return parseInt(d.year) })
+                       .filter(function(year) { return Number.isInteger(year) });
 
-            function zoom() {
-                svg.attr("transform", d3.event.transform);
-            }
+            var min = Math.min(...years);
+            var max = Math.max(...years);
 
+            var xs = g.nodes().map(function(node) {
+                var label = g.node(node);
+                return label.x;
+            });
+            maxX = Math.max(...xs);
+
+            var y = d3.scaleLinear()
+                  .domain([min, max])
+                  .range([0, height]);
+
+            nodez.forEach(function(d){ d.y = y(d.year) });
+
+            var links = g.edges().map(function(edge) {
+                var v = edge.v;
+                var w = edge.w;
+
+                var link = {};
+
+                var source = g.node(v);
+                var target = g.node(w);
+
+                link.source = {x:source.x, y:source.y};
+                link.target = {x:target.x, y:target.y};
+
+                return link;
+            });
+
+
+            renderD3(maxX, maxY, nodez, links)
         });
     });
+
+    function renderD3(maxX, maxY, nodes, links){
+        var y = d3.scaleLinear()
+                  .domain([0, maxX])
+                  .range([0, height]);
+
+        var x = d3.scaleLinear()
+                  .domain([0, maxY])
+                  .range([0, width]);
+
+        var node = svg.selectAll('g.node')
+            .data(nodes, function(d) { return d.id });
+
+        var nodeEnter = node.enter().append('g')
+            .attr('class', 'node')
+            .attr("transform", function(d) {
+                return "translate(" + x(+d.x) + "," + y(+d.y) + ")";
+            });
+
+        var container = nodeEnter.append("a")
+            .attr("xlink:href", function(d){ return "https://www.genealogy.math.ndsu.nodak.edu/id.php?id=" + d.id })
+            .attr("target", "_blank");
+
+        var text = container.append('text')
+            .attr("x", function(d) {
+                return  0;
+            })
+            .attr("text-anchor", function(d) {
+                return "start";
+            })
+
+
+        text.append('tspan')
+            .attr('class', 'name')
+            .text(function(d) { return d.name + " " + d.year})
+            .attr('x', 0);
+            ;
+
+        text.append('tspan')
+            .attr('class', 'university')
+            .text(function(d) { return d.school })
+            .attr('dy', '1em')
+            .attr('x', 0);
+
+
+
+        // Update the links...
+        var link = svg.selectAll('path.link')
+            .data(links);
+
+        // Enter any new links at the parent's previous position.
+        var linkEnter = link.enter().insert('path', "g")
+            .attr("class", "link")
+            .attr('d', function(d){
+                return diagonal(d.source, d.target)
+            });
+
+
+        function diagonal(s, d) {
+            path = `M ${x(s.x)} ${y(s.y)}
+                    C ${(x(s.x) + x(d.x)) / 2} ${y(d.y)},
+                      ${(x(s.x) + x(d.x)) / 2} ${y(s.y)},
+                      ${x(d.x)} ${y(d.y)}`
+            return path
+        }
+
+    }
+
+    function renderDagre(g){
+        // Create the renderer
+        var render = new dagreD3.render();
+        
+        // Set up an SVG group so that we can translate the final graph.
+        var svg = d3.select("body").append("svg")
+            .attr('width', width)
+            .attr('height', height);
+            svgGroup = svg.append("g");
+        
+        // Run the renderer. This is what draws the final graph.
+        render(d3.select("svg g"), g);
+        
+        // Center the graph
+        var xCenterOffset = (svg.attr("width") - g.graph().width) / 2;
+        svgGroup.attr("transform", "translate(" + xCenterOffset + ", 20)");
+        svg.attr("height", g.graph().height + 40);
+
+
+        // Update the links...
+        var link = svg.selectAll('path.link')
+            .data(links, function(d) { return d.id; });
+
+        // Enter any new links at the parent's previous position.
+        var linkEnter = link.enter().insert('path', "g")
+            .attr("class", "link")
+            .attr('d', function(d){
+                var o = {x: source.y0, y: source.x0}
+                return diagonal(o, o)
+            });
+
+
+        svg.call(d3.zoom()
+            .scaleExtent([1, 5])
+            .on("zoom", zoom));
+
+        function zoom() {
+            svg.attr("transform", d3.event.transform);
+        }
+
+        // Creates a curved (diagonal) path from parent to the child nodes
+        
+    }
 
     /**
     d3.json("genealogy.json", function(error, data) {
