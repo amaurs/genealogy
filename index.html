@@ -200,7 +200,7 @@ text {
                   .domain([min, max])
                   .range([0, height]);
 
-            nodez.forEach(function(d){ d.y = y(d.year) });
+            nodez.forEach(function(d){  d.y = y(d.year); console.log(d.y + " " + d.year) });
 
             links = g.edges().map(function(edge) {
                 var v = edge.v;
@@ -241,6 +241,8 @@ text {
             .data(nodes, function(d) { return d.id });
 
             console.log(node);
+
+
 
         var nodeEnter = node.enter().append('g')
             .attr('class', 'node')
@@ -292,6 +294,9 @@ text {
         }
 
         var container = nodeEnter.append("a")
+            .attr("xlink:href", function(d){ return "https://www.genealogy.math.ndsu.nodak.edu/id.php?id=" + d.id });
+
+
 
         var text = container.append('text')
             .attr("x", function(d) {

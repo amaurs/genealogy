@@ -44,6 +44,21 @@ def get_nodes(node_id):
         node['children'] = [get_nodes(child_id) for child_id in children]
     return node
 
+
+good_nodes = {}
+good_edges = []
+
+def find_and_add(node, nodes, edges):
+
+    good_nodes[node] = nodes[node]
+
+    for edge in edges:
+        if node == edge["source"]:
+            good_edges.append(edge)
+            find_and_add(edge["target"], nodes, edges)
+
+
+
 if __name__ == '__main__':
     url = "%s/id.php?id=%s" % (BASE_URL, sys.argv[1])
     start(url)
@@ -54,9 +69,38 @@ if __name__ == '__main__':
     #with open('genealogy.json', 'w') as outfile:
     #    json.dump(tree, outfile, indent=4)
 
+    nodes = dict(all_info)
+    for node in all_info:
+        if ('school' in all_info[node] and len(all_info[node]['school']) == 0) or ('year' in all_info[node] and len(all_info[node]['year']) == 0) or not all_info[node]['year'].isdigit():
+            del nodes[node]
+
+    final_edges = []
+
+
+    print(parent_child)
+    for edge in parent_child:
+        if ("source" in edge and edge["source"] in nodes) and ("target" in edge and edge["target"] in nodes):
+            final_edges.append(edge)
+
+    final_nodes = dict(nodes)
+
+    for node in nodes:
+        found = False
+        for edge in final_edges:
+            if node == edge["target"]:
+                found = True
+
+        if not (found or node == sys.argv[1]):
+            del final_nodes[node]
+
+
+
+    find_and_add(sys.argv[1], final_nodes, final_edges)
+
+
     with open('nodes.json', 'w') as outfile:
-        json.dump(all_info, outfile, indent=4)
+        json.dump(good_nodes, outfile, indent=4)
 
     with open('edges.json', 'w') as outfile:
-        json.dump(parent_child, outfile, indent=4)
+        json.dump(good_edges, outfile, indent=4)
     print(len(visited))
