@@ -71,7 +71,7 @@ if __name__ == '__main__':
 
     nodes = dict(all_info)
     for node in all_info:
-        if ('school' in all_info[node] and len(all_info[node]['school']) == 0) or ('year' in all_info[node] and len(all_info[node]['year']) == 0) or not all_info[node]['year'].isdigit():
+        if ('school' in all_info[node] and len(all_info[node]['school']) == 0) or ('year' in all_info[node] and len(all_info[node]['year']) == 0) or not all_info[node]['year'].isdigit() or (all_info[node]['year'].isdigit() and int(all_info[node]['year'])< 1700):
             del nodes[node]
 
     final_edges = []

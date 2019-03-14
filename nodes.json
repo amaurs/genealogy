@@ -1,836 +1,248 @@
 {
-    "31702": {
-        "name": "Guillermo Grabinsky",
-        "year": "1980",
-        "school": "University of California, Berkeley",
-        "title": "Poisson Processes Built Over Sigma-Finite Measure Spaces"
-    },
-    "6439": {
-        "name": "Jacob Feldman",
-        "year": "1954",
-        "school": "The University of Chicago",
-        "title": "Isomorphisms of Rings of Operators"
-    },
-    "6386": {
-        "name": "Irving Segal",
-        "year": "1940",
-        "school": "Yale University",
-        "title": "Ring Properties of Certain Classes of Functions"
-    },
-    "7490": {
-        "name": "C. Einar Hille",
-        "year": "1918",
-        "school": "Stockholm University",
-        "title": "Some Problems Concerning Spherical Harmonics"
-    },
-    "7489": {
-        "name": "Marcel Riesz",
-        "year": "1912",
-        "school": "E\u00f6tv\u00f6s Lor\u00e1nd University",
-        "title": ""
-    },
     "7488": {
-        "name": "Leopold Fej\u00e9r",
+        "title": "",
         "year": "1902",
         "school": "E\u00f6tv\u00f6s Lor\u00e1nd University",
-        "title": ""
-    },
-    "7487": {
-        "name": "Hermann Schwarz",
-        "year": "1864",
-        "school": "Universit\u00e4t Berlin",
-        "title": "De superficiebus in planum explicabilibus primorum septem ordinum"
-    },
-    "18331": {
-        "name": "Ernst Kummer",
-        "year": "1831",
-        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg",
-        "title": "De cosinuum et sinuum potestatibus secundum cosinus et sinus arcuum multiplicium evolvendis"
-    },
-    "25484": {
-        "name": "Heinrich Scherk",
-        "year": "1823",
-        "school": "Universit\u00e4t Berlin",
-        "title": "De evolvenda functione ....   disquisitiones nonnullae analyticae"
-    },
-    "18603": {
-        "name": "Friedrich Bessel",
-        "year": "1810",
-        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen",
-        "title": ""
-    },
-    "18231": {
-        "name": "Carl Gau\u00df",
-        "year": "1799",
-        "school": "Universit\u00e4t Helmstedt",
-        "title": "Demonstratio nova theorematis omnem functionem algebraicam rationalem integram unius variabilis in factores reales primi vel secundi gradus resolvi posse"
-    },
-    "18230": {
-        "name": "Johann Pfaff",
-        "year": "1786",
-        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen",
-        "title": "Commentatio de ortibus et occasibus siderum apud auctores classicos commemoratis"
-    },
-    "66476": {
-        "name": "Abraham K\u00e4stner",
-        "year": "1739",
-        "school": "Universit\u00e4t Leipzig",
-        "title": "Theoria radicum in aequationibus"
-    },
-    "57670": {
-        "name": "Christian Hausen",
-        "year": "1713",
-        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg",
-        "title": "De corpore scissuris figurisque non cruetando ductu"
-    },
-    "59365": {
-        "name": "Christian Siber",
-        "year": "1682",
-        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg",
-        "title": "De stylo Novi Testamenti Graeco"
-    },
-    "72669": {
-        "name": "Johann Wichmannshausen",
-        "year": "1685",
-        "school": "Universit\u00e4t Leipzig",
-        "title": "Disputationem Moralem De Divortiis Secundum Jus Naturae"
-    },
-    "21235": {
-        "name": "Otto Mencke",
-        "year": "1665",
-        "school": "Universit\u00e4t Leipzig",
-        "title": "Ex Theologia naturali -- De Absoluta Dei Simplicitate, Micropolitiam, id est Rempublicam In Microcosmo Conspicuam"
-    },
-    "137705": {
-        "name": "Jakob Thomasius",
-        "year": "1643",
-        "school": "Universit\u00e4t Leipzig",
-        "title": ""
-    },
-    "143630": {
-        "name": "Friedrich Leibniz",
-        "year": "1622",
-        "school": "Universit\u00e4t Leipzig",
-        "title": ""
-    },
-    "128986": {
-        "name": "Johann Planer",
-        "year": "1709",
-        "school": "Eberhard-Karls-Universit\u00e4t T\u00fcbingen",
-        "title": "Disputatio medica inauguralis, sistens aegrum dysentericum"
-    },
-    "128046": {
-        "name": "Johann Pasch",
-        "year": "1683",
-        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg",
-        "title": "Conjunctiones in genere dissertatione astronomico-theorica"
-    },
-    "127962": {
-        "name": "Michael d. J. Walther",
-        "year": "1687",
-        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg",
-        "title": "Disputatio theologica inauguralis de Paulina Petri increpatione"
-    },
-    "127801": {
-        "name": "Aegidius Strauch",
-        "year": "1633",
-        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg",
-        "title": "Disputatio Physica De Elementis In Genere Et In Specie"
-    },
-    "127734": {
-        "name": "Nicolaus Zapf",
-        "year": "1629",
-        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg",
-        "title": ""
-    },
-    "127424": {
-        "name": "Erasmus Schmidt",
-        "year": "1592",
-        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg",
-        "title": ""
-    },
-    "127898": {
-        "name": "Sethus Calvisius",
-        "year": "1582",
-        "school": "Universit\u00e4t Leipzig",
-        "title": ""
-    },
-    "127864": {
-        "name": "Nikolaus Selnecker",
-        "year": "1570",
-        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg",
-        "title": ""
-    },
-    "127790": {
-        "name": "Moritz Steinmetz",
-        "year": "1567",
-        "school": "Universit\u00e4t Leipzig",
-        "title": "De Peste Capita Disputationis Ordinariae"
-    },
-    "126827": {
-        "name": "Georg Joachim Rheticus",
-        "year": "1535",
-        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg",
-        "title": ""
-    },
-    "126730": {
-        "name": "Johannes Volmar",
-        "year": "1515",
-        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg",
-        "title": ""
-    },
-    "126724": {
-        "name": "Bonifazius Erasmi",
-        "year": "1509",
-        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg",
-        "title": ""
-    },
-    "126177": {
-        "name": "Nicolaus Copernicus",
-        "year": "1499",
-        "school": "Universit\u00e0 di Bologna and Universit\u00e0 degli Studi di Padova and Uniwersytet Jagiello\u0144ski and Universit\u00e0 degli Studi di Ferrara",
-        "title": ""
-    },
-    "126113": {
-        "name": "Leonhard von Dobsch\u00fctz",
-        "year": "1489",
-        "school": "Uniwersytet Jagiello\u0144ski",
-        "title": ""
-    },
-    "126112": {
-        "name": "Domenico Novara da Ferrara",
-        "year": "1483",
-        "school": "Universit\u00e0 degli Studi di Firenze",
-        "title": ""
-    },
-    "126109": {
-        "name": "Johannes Regiomontanus",
-        "year": "1457",
-        "school": "Universit\u00e4t Leipzig and Universit\u00e4t Wien",
-        "title": ""
-    },
-    "126087": {
-        "name": "Georg von Peuerbach",
-        "year": "1440",
-        "school": "Universit\u00e4t Wien",
-        "title": ""
-    },
-    "126887": {
-        "name": "Johannes  von Gmunden",
-        "year": "1406",
-        "school": "Universit\u00e4t Wien",
-        "title": ""
-    },
-    "127264": {
-        "name": "Heinrich  von Langenstein",
-        "year": "1375",
-        "school": "Universit\u00e9 de Paris",
-        "title": ""
-    },
-    "131561": {
-        "name": "Basilios Bessarion",
-        "year": "1436",
-        "school": "Mystras",
-        "title": ""
-    },
-    "127848": {
-        "name": "Jacobus  Martini",
-        "year": "1596",
-        "school": "Universit\u00e4t Helmstedt",
-        "title": ""
-    },
-    "128105": {
-        "name": "Cornelius Martini",
-        "year": "1592",
-        "school": "Universit\u00e4t Helmstedt",
-        "title": "Disputatio de philosophia eiusque instrumentis"
-    },
-    "128122": {
-        "name": "Duncan Liddel",
-        "year": "1596",
-        "school": "Universit\u00e4t Helmstedt",
-        "title": ""
-    },
-    "128305": {
-        "name": "John Craig",
-        "year": "1580",
-        "school": "Universit\u00e4t Basel",
-        "title": "Diexodus medica de hepatis dispositionibus"
-    },
-    "125148": {
-        "name": "Theodor Zwinger",
-        "year": "1559",
-        "school": "Universit\u00e0 degli Studi di Padova",
-        "title": ""
-    },
-    "125047": {
-        "name": "Petrus Ramus",
-        "year": "1536",
-        "school": "Coll\u00e8ge de Navarre",
-        "title": "Quaecumque ab Aristotele dicta essent, commentitia esse"
-    },
-    "125665": {
-        "name": "Johannes Sturmius",
-        "year": "1527",
-        "school": "Universit\u00e9 Catholique de Louvain",
-        "title": ""
-    },
-    "125658": {
-        "name": "Nicolas Cl\u00e9nard",
-        "year": "1521",
-        "school": "Universit\u00e9 Catholique de Louvain",
-        "title": ""
-    },
-    "125681": {
-        "name": "Jacobus Latomus",
-        "year": "1519",
-        "school": "Katholieke Universiteit Leuven",
-        "title": ""
-    },
-    "125888": {
-        "name": "Jan Standonck",
-        "year": "1490",
-        "school": "Coll\u00e8ge de Montaigu",
-        "title": ""
-    },
-    "125682": {
-        "name": "Jan van Campen",
-        "year": "1519",
-        "school": "Universit\u00e9 Catholique de Louvain",
-        "title": ""
-    },
-    "125760": {
-        "name": "Johann Reuchlin",
-        "year": "1481",
-        "school": "Universit\u00e9 de Poitiers",
-        "title": ""
-    },
-    "131444": {
-        "name": "Johannes Argyropoulos",
-        "year": "1444",
-        "school": "Universit\u00e0 degli Studi di Padova",
-        "title": ""
-    },
-    "119159": {
-        "name": "Johannes von Andernach",
-        "year": "1532",
-        "school": "Coll\u00e8ge de Tr\u00e9guier",
-        "title": ""
-    },
-    "126571": {
-        "name": "Rutger Rescius",
-        "year": "1513",
-        "school": "Universit\u00e9 de Paris",
-        "title": ""
-    },
-    "127181": {
-        "name": "Girolamo Aleandro",
-        "year": "1508",
-        "school": "Universit\u00e0 degli Studi di Padova",
-        "title": ""
-    },
-    "131447": {
-        "name": "Scipione Fortiguerra",
-        "year": "1493",
-        "school": "Universit\u00e0 degli Studi di Firenze",
-        "title": ""
-    },
-    "131535": {
-        "name": "Angelo Poliziano",
-        "year": "1477",
-        "school": "Universit\u00e0 degli Studi di Firenze",
-        "title": ""
-    },
-    "131539": {
-        "name": "Marsilio Ficino",
-        "year": "1462",
-        "school": "Universit\u00e0 degli Studi di Firenze",
-        "title": ""
-    },
-    "125422": {
-        "name": "Jacobus Sylvius",
-        "year": "1530",
-        "school": "Universit\u00e9 de Paris",
-        "title": ""
-    },
-    "128987": {
-        "name": "Fran\u00e7ois Dubois",
-        "year": "1516",
-        "school": "Universit\u00e9 de Paris",
-        "title": ""
-    },
-    "131546": {
-        "name": "Jacques Toussain",
-        "year": "1521",
-        "school": "Universit\u00e9 de Paris",
-        "title": ""
-    },
-    "131517": {
-        "name": "Guillaume Bud\u00e9",
-        "year": "1491",
-        "school": "Universit\u00e9 d'Orl\u00e9ans and Universit\u00e9 de Paris",
-        "title": ""
-    },
-    "131541": {
-        "name": "Janus Lascaris",
-        "year": "1472",
-        "school": "Universit\u00e0 degli Studi di Padova",
-        "title": ""
-    },
-    "131576": {
-        "name": "Demetrios Chalcocondyles",
-        "year": "1452",
-        "school": "Mystras and Accademia Romana",
-        "title": ""
-    },
-    "131584": {
-        "name": "Theodoros Gazes",
-        "year": "1433",
-        "school": "Universit\u00e0 di Mantova and Constantinople",
-        "title": ""
-    },
-    "134873": {
-        "name": "Vittorino da Feltre",
-        "year": "1416",
-        "school": "Universit\u00e0 degli Studi di Padova",
-        "title": ""
-    },
-    "152906": {
-        "name": "Bassiano Landi",
-        "year": "1542",
-        "school": "Universit\u00e0 degli Studi di Padova",
-        "title": ""
-    },
-    "128348": {
-        "name": "Paul Wittich",
-        "year": "1566",
-        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg and Universit\u00e4t Leipzig",
-        "title": ""
-    },
-    "127092": {
-        "name": "Valentin Thau",
-        "year": "1555",
-        "school": "Universit\u00e4t Leipzig",
-        "title": ""
-    },
-    "127011": {
-        "name": "Johannes Hommel",
-        "year": "1543",
-        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg",
-        "title": ""
-    },
-    "126736": {
-        "name": "Erasmus Reinhold",
-        "year": "1535",
-        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg",
-        "title": ""
-    },
-    "126667": {
-        "name": "Jakob Milich",
-        "year": "1524",
-        "school": "Universit\u00e4t Wien",
-        "title": ""
-    },
-    "125938": {
-        "name": "Desiderius Erasmus",
-        "year": "1506",
-        "school": "University of Turin",
-        "title": ""
-    },
-    "126659": {
-        "name": "Ulrich Zasius",
-        "year": "1501",
-        "school": "Albert-Ludwigs-Universit\u00e4t Freiburg im Breisgau",
-        "title": ""
-    },
-    "126956": {
-        "name": "Philipp Melanchthon",
-        "year": "1514",
-        "school": "Eberhard-Karls-Universit\u00e4t T\u00fcbingen",
-        "title": ""
-    },
-    "127107": {
-        "name": "Johannes St\u00f6ffler",
-        "year": "1476",
-        "school": "Universit\u00e4t Ingolstadt",
-        "title": ""
-    },
-    "128938": {
-        "name": "Rudolf Camerarius",
-        "year": "1686",
-        "school": "Eberhard-Karls-Universit\u00e4t T\u00fcbingen",
-        "title": "Helleborus niger medice delineatus; Tensio cordis, lipothymiae causa, occasione experimenti pneumatici exposita"
-    },
-    "123974": {
-        "name": "Georg Metzger",
-        "year": "1650",
-        "school": "Universit\u00e4t Basel",
-        "title": "Disputatio medica inauguralis de catarrho suffocativo"
-    },
-    "182089": {
-        "name": "Gottfried M\u00f6bius",
-        "year": "1640",
-        "school": "Friedrich-Schiller-Universit\u00e4t Jena",
-        "title": "Disputatio Medica, De Affectu Hypochondriaco"
-    },
-    "125154": {
-        "name": "Werner Rolfinck",
-        "year": "1625",
-        "school": "Universit\u00e0 degli Studi di Padova",
-        "title": ""
-    },
-    "126111": {
-        "name": "Daniel Sennert",
-        "year": "1599",
-        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg",
-        "title": "De visu exteriorum sensuum; De sympathiae et antipathi\u00e6 rerum naturalium caussis disquisitio singularis"
-    },
-    "127278": {
-        "name": "Jan Jessenius",
-        "year": "1591",
-        "school": "Universit\u00e0 degli Studi di Padova",
-        "title": ""
-    },
-    "125109": {
-        "name": "Hieronymus Fabricius",
-        "year": "1559",
-        "school": "Universit\u00e0 degli Studi di Padova",
-        "title": ""
-    },
-    "125142": {
-        "name": "Gabriele Falloppio",
-        "year": "1547",
-        "school": "Universit\u00e0 degli Studi di Padova and Universit\u00e0 degli Studi di Ferrara",
-        "title": ""
-    },
-    "127245": {
-        "name": "Antonio Brasavola",
-        "year": "1520",
-        "school": "Universit\u00e0 degli Studi di Ferrara",
-        "title": ""
-    },
-    "127166": {
-        "name": "Niccol\u00f2 Leoniceno",
-        "year": "1453",
-        "school": "Universit\u00e0 degli Studi di Padova",
-        "title": ""
-    },
-    "125303": {
-        "name": "Matteo Realdo Colombo",
-        "year": "1544",
-        "school": "Universit\u00e0 degli Studi di Padova",
-        "title": ""
-    },
-    "119178": {
-        "name": "Andreas Vesalius",
-        "year": "1537",
-        "school": "Universit\u00e0 degli Studi di Padova and Universit\u00e9 Catholique de Louvain",
-        "title": "Paraphrasis in nonum librum Rhazae medici arabis clariss ad regem Almansorum de affectum singularum corporis partium curatione"
-    },
-    "119097": {
-        "name": "Gemma Frisius",
-        "year": "1536",
-        "school": "Universit\u00e9 Catholique de Louvain",
-        "title": ""
-    },
-    "125892": {
-        "name": "Petrus Curtius",
-        "year": "1530",
-        "school": "Universit\u00e9 Catholique de Louvain",
-        "title": ""
-    },
-    "125894": {
-        "name": "Maarten van Dorp",
-        "year": "1515",
-        "school": "Universit\u00e9 Catholique de Louvain",
-        "title": ""
-    },
-    "125897": {
-        "name": "Leo Outers",
-        "year": "1485",
-        "school": "Universit\u00e9 Catholique de Louvain",
-        "title": ""
-    },
-    "125006": {
-        "name": "Adriaan van den Spieghel",
-        "year": "1603",
-        "school": "Universit\u00e0 degli Studi di Padova and Universit\u00e9 Catholique de Louvain",
-        "title": ""
-    },
-    "182088": {
-        "name": "Johann von Brunn",
-        "year": "1615",
-        "school": "Universit\u00e4t Basel",
-        "title": "Disputatio medica"
-    },
-    "125048": {
-        "name": "Johannes Stupanus",
-        "year": "1569",
-        "school": "Universit\u00e4t Basel",
-        "title": ""
-    },
-    "76481": {
-        "name": "Elias Camerarius, Sr.",
-        "year": "1663",
-        "school": "Eberhard-Karls-Universit\u00e4t T\u00fcbingen",
-        "title": "Dissertatio medica inauguralis de acidulis"
-    },
-    "65162": {
-        "name": "Heinrich Brandes",
-        "year": "1800",
-        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen",
-        "title": "Versuche, die Entfernung, die Geschwindigkeit und die Bahnen der Sternschnuppen zu bestimmen"
-    },
-    "65161": {
-        "name": "Georg Lichtenberg",
-        "year": "1765",
-        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen",
-        "title": ""
-    },
-    "7486": {
-        "name": "Karl Weierstra\u00df",
-        "year": "1854",
-        "school": "Universit\u00e4t K\u00f6nigsberg",
-        "title": "Beitr\u00e4ge zur Theorie der Abel'schen Integrale"
-    },
-    "29458": {
-        "name": "Christoph Gudermann",
-        "year": "1832",
-        "school": "Humboldt-Universit\u00e4t zu Berlin",
-        "title": ""
-    },
-    "57667": {
-        "name": "Bernhard Thibaut",
-        "year": "1796",
-        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen",
-        "title": "Dissertatio historiam controversiae circa numerorum negativorum et impossibilium logarithmos sistens"
-    },
-    "833": {
-        "name": "Irving Kaplansky",
-        "year": "1941",
-        "school": "Harvard University",
-        "title": "Maximal Fields with Valuations"
-    },
-    "834": {
-        "name": "Saunders Mac Lane",
-        "year": "1934",
-        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen",
-        "title": "Abgek\u00fcrzte Beweise im Logikkalkul   (Abbreviated Proofs in the Logical Calculus)"
-    },
-    "7373": {
-        "name": "Hermann Weyl",
-        "year": "1908",
-        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen",
-        "title": "Singul\u00e4re Integralgleichungen mit besonder Ber\u00fccksichtigung des Fourierschen Integraltheorems"
-    },
-    "7298": {
-        "name": "David Hilbert",
-        "year": "1885",
-        "school": "Universit\u00e4t K\u00f6nigsberg",
-        "title": "\u00dcber invariante Eigenschaften specieller bin\u00e4rer Formen, insbesondere der Kugelfunctionen"
-    },
-    "7404": {
-        "name": "C. L. Ferdinand Lindemann",
-        "year": "1873",
-        "school": "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
-        "title": "\u00dcber unendlich kleine Bewegungen und \u00fcber Kraftsysteme bei allgemeiner projektivischer Ma\u00dfbestimmung"
-    },
-    "7401": {
-        "name": "C. Felix Klein",
-        "year": "1868",
-        "school": "Rheinische Friedrich-Wilhelms-Universit\u00e4t Bonn",
-        "title": "\u00dcber die Transformation der allgemeinen Gleichung des zweiten Grades zwischen Linien-Koordinaten auf eine kanonische Form"
-    },
-    "7402": {
-        "name": "Julius Pl\u00fccker",
-        "year": "1823",
-        "school": "Philipps-Universit\u00e4t Marburg",
-        "title": "Generalem analyeseos applicationem ad ea quae geometriae altioris et mechanicae basis et fundamenta sunt e serie Tayloria deducit"
-    },
-    "29642": {
-        "name": "Christian Gerling",
-        "year": "1812",
-        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen",
-        "title": "Methodi proiectionis orthographicae usum ad calculos parallacticos facilitandos explicavit simulque eclipsin solarem die"
-    },
-    "19964": {
-        "name": "Rudolf Lipschitz",
-        "year": "1853",
-        "school": "Universit\u00e4t Berlin",
-        "title": "Determinatio status magnetici viribus inducentibus commoti in ellipsoide"
-    },
-    "17946": {
-        "name": "Gustav Dirichlet",
-        "year": "1827",
-        "school": "Rheinische Friedrich-Wilhelms-Universit\u00e4t Bonn",
-        "title": "Partial Results on Fermat's Last Theorem, Exponent 5"
-    },
-    "17865": {
-        "name": "Sim\u00e9on Poisson",
-        "year": "1800",
-        "school": "\u00c9cole Polytechnique",
-        "title": ""
+        "name": "Leopold Fej\u00e9r"
     },
     "17864": {
-        "name": "Joseph Lagrange",
+        "title": "",
         "year": "1754",
         "school": "Universit\u00e0 di Torino",
-        "title": ""
+        "name": "Joseph Lagrange"
     },
-    "38586": {
-        "name": "Leonhard Euler",
-        "year": "1726",
-        "school": "Universit\u00e4t Basel",
-        "title": "Dissertatio physica de sono"
+    "833": {
+        "title": "Maximal Fields with Valuations",
+        "year": "1941",
+        "school": "Harvard University",
+        "name": "Irving Kaplansky"
     },
-    "53410": {
-        "name": "Johann Bernoulli",
-        "year": "1694",
-        "school": "Universit\u00e4t Basel",
-        "title": "Dissertatio de effervescentia et fermentatione; Dissertatio Inauguralis Physico-Anatomica de Motu Musculorum"
+    "7298": {
+        "title": "\u00dcber invariante Eigenschaften specieller bin\u00e4rer Formen, insbesondere der Kugelfunctionen",
+        "year": "1885",
+        "school": "Universit\u00e4t K\u00f6nigsberg",
+        "name": "David Hilbert"
     },
-    "54440": {
-        "name": "Jacob Bernoulli",
-        "year": "1684",
-        "school": "Universit\u00e4t Basel",
-        "title": "Solutionem tergemini problematis arithmetici, geometrici et astronomici"
-    },
-    "143084": {
-        "name": "Peter Werenfels",
-        "year": "1649",
-        "school": "Universit\u00e4t Basel",
-        "title": "Diatribe In Psalmum S. S. Psalterii Primum. De Vnica Et Vera Hominis Felicitate"
-    },
-    "143083": {
-        "name": "Theodor Zwinger, Jr.",
-        "year": "1630",
-        "school": "Universit\u00e4t Basel",
-        "title": "De Illustri Sententia Apostolica Hebr. c. 13. V. 8"
-    },
-    "143082": {
-        "name": "Sebastian Beck",
-        "year": "1610",
-        "school": "Universit\u00e4t Basel",
-        "title": "Illustre Axioma, Ivstvs Avtem Fide Sva Vivet"
-    },
-    "143045": {
-        "name": "Johann Grynaeus",
-        "year": "1564",
-        "school": "Eberhard-Karls-Universit\u00e4t T\u00fcbingen",
-        "title": "De Maiestate hominis Christi: deq[ue] vera & substantiali corporis & sanguinis eius in Eucharistia"
-    },
-    "182092": {
-        "name": "Simon Sulzer",
-        "year": "1532",
-        "school": "Universit\u00e4t Basel",
-        "title": ""
-    },
-    "131399": {
-        "name": "Wolfgang Capito",
-        "year": "1515",
-        "school": "Albert-Ludwigs-Universit\u00e4t Freiburg im Breisgau",
-        "title": ""
-    },
-    "182045": {
-        "name": "Simon Grynaeus",
-        "year": "1523",
-        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg",
-        "title": ""
-    },
-    "143044": {
-        "name": "Jacob Andreae",
-        "year": "1553",
-        "school": "Eberhard-Karls-Universit\u00e4t T\u00fcbingen",
-        "title": ""
-    },
-    "152648": {
-        "name": "Jakob Beuerlin",
-        "year": "1551",
-        "school": "Eberhard-Karls-Universit\u00e4t T\u00fcbingen",
-        "title": ""
-    },
-    "152647": {
-        "name": "Balthasar Kaeuffelin",
-        "year": "1521",
-        "school": "Eberhard-Karls-Universit\u00e4t T\u00fcbingen",
-        "title": ""
-    },
-    "129628": {
-        "name": "Nikolaus Eglinger",
-        "year": "1661",
-        "school": "Universit\u00e4t Basel",
-        "title": "Disputatio medica in universam physiologiam; Disputatio Medica Inauguralis De Angina"
-    },
-    "125125": {
-        "name": "Emmanuel Stupanus",
-        "year": "1613",
-        "school": "Universit\u00e4t Basel",
-        "title": "De omnis pleuritidis theoria et generali therapia themata medica"
-    },
-    "130248": {
-        "name": "Petrus Ryff",
-        "year": "1584",
-        "school": "Universit\u00e4t Basel",
-        "title": "De Affectibus cordis"
-    },
-    "182090": {
-        "name": "Felix Plater",
-        "year": "1557",
-        "school": "Universit\u00e9 de Montpellier",
-        "title": ""
-    },
-    "129708": {
-        "name": "Johann  Bauhin",
-        "year": "1649",
-        "school": "Universit\u00e4t Basel",
-        "title": "Signorum medicorum doctrina, annexa sphygmice, uromantia & crisium theoria, ex praecipuis Galen. & Hippocr. monumentis semeioticis excerpta"
-    },
-    "108295": {
-        "name": "Pierre-Simon Laplace",
-        "year": "1769",
-        "school": "Universit\u00e9 de Caen",
-        "title": "Recherches sur le calcul integral aux differences infiniment petites et aux differences finies"
-    },
-    "108266": {
-        "name": "Jean d'Alembert",
-        "year": "1735",
-        "school": "Coll\u00e8ge Mazarin",
-        "title": ""
-    },
-    "47064": {
-        "name": "Martin Ohm",
-        "year": "1811",
-        "school": "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
-        "title": "De elevatione serierum infinitarum secundi ordinis ad potestatem exponentis indeterminati"
-    },
-    "47025": {
-        "name": "Karl von Langsdorf",
-        "year": "1781",
-        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen and Justus-Liebig-Universit\u00e4t Gie\u00dfen and Universit\u00e4t Erfurt",
-        "title": ""
-    },
-    "7863": {
-        "name": "I.  Paul Bernays",
-        "year": "1912",
-        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen",
-        "title": "\u00dcber die Darstellung von positiven, ganzen Zahlen durch die primitiven, bin\u00e4ren quadratischen Formen einer nicht-quadratischen Diskriminante"
-    },
-    "7862": {
-        "name": "Edmund Landau",
-        "year": "1899",
-        "school": "Universit\u00e4t Berlin",
-        "title": "Neuer Beweis der Gleichung $\\sum_{k=1}^{\\infty}\\frac{\\mu(k)}{k}=0$"
-    },
-    "4642": {
-        "name": "Ferdinand Frobenius",
-        "year": "1870",
+    "29458": {
+        "title": "",
+        "year": "1832",
         "school": "Humboldt-Universit\u00e4t zu Berlin",
-        "title": "De functionum analyticarum unius variabilis per series infinitas repraesentatione"
+        "name": "Christoph Gudermann"
+    },
+    "7490": {
+        "title": "Some Problems Concerning Spherical Harmonics",
+        "year": "1918",
+        "school": "Stockholm University",
+        "name": "C. Einar Hille"
+    },
+    "6386": {
+        "title": "Ring Properties of Certain Classes of Functions",
+        "year": "1940",
+        "school": "Yale University",
+        "name": "Irving Segal"
+    },
+    "65162": {
+        "title": "Versuche, die Entfernung, die Geschwindigkeit und die Bahnen der Sternschnuppen zu bestimmen",
+        "year": "1800",
+        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen",
+        "name": "Heinrich Brandes"
     },
     "11370": {
-        "name": "Lazarus Fuchs",
+        "title": "De Superficierum lineis curvaturae",
         "year": "1858",
         "school": "Universit\u00e4t Berlin",
-        "title": "De Superficierum lineis curvaturae"
+        "name": "Lazarus Fuchs"
+    },
+    "18231": {
+        "title": "Demonstratio nova theorematis omnem functionem algebraicam rationalem integram unius variabilis in factores reales primi vel secundi gradus resolvi posse",
+        "year": "1799",
+        "school": "Universit\u00e4t Helmstedt",
+        "name": "Carl Gau\u00df"
+    },
+    "834": {
+        "title": "Abgek\u00fcrzte Beweise im Logikkalkul   (Abbreviated Proofs in the Logical Calculus)",
+        "year": "1934",
+        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen",
+        "name": "Saunders Mac Lane"
+    },
+    "57667": {
+        "title": "Dissertatio historiam controversiae circa numerorum negativorum et impossibilium logarithmos sistens",
+        "year": "1796",
+        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen",
+        "name": "Bernhard Thibaut"
+    },
+    "47064": {
+        "title": "De elevatione serierum infinitarum secundi ordinis ad potestatem exponentis indeterminati",
+        "year": "1811",
+        "school": "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+        "name": "Martin Ohm"
+    },
+    "7487": {
+        "title": "De superficiebus in planum explicabilibus primorum septem ordinum",
+        "year": "1864",
+        "school": "Universit\u00e4t Berlin",
+        "name": "Hermann Schwarz"
+    },
+    "25484": {
+        "title": "De evolvenda functione ....   disquisitiones nonnullae analyticae",
+        "year": "1823",
+        "school": "Universit\u00e4t Berlin",
+        "name": "Heinrich Scherk"
+    },
+    "18603": {
+        "title": "",
+        "year": "1810",
+        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen",
+        "name": "Friedrich Bessel"
+    },
+    "38586": {
+        "title": "Dissertatio physica de sono",
+        "year": "1726",
+        "school": "Universit\u00e4t Basel",
+        "name": "Leonhard Euler"
+    },
+    "18331": {
+        "title": "De cosinuum et sinuum potestatibus secundum cosinus et sinus arcuum multiplicium evolvendis",
+        "year": "1831",
+        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg",
+        "name": "Ernst Kummer"
+    },
+    "19964": {
+        "title": "Determinatio status magnetici viribus inducentibus commoti in ellipsoide",
+        "year": "1853",
+        "school": "Universit\u00e4t Berlin",
+        "name": "Rudolf Lipschitz"
+    },
+    "7373": {
+        "title": "Singul\u00e4re Integralgleichungen mit besonder Ber\u00fccksichtigung des Fourierschen Integraltheorems",
+        "year": "1908",
+        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen",
+        "name": "Hermann Weyl"
+    },
+    "57670": {
+        "title": "De corpore scissuris figurisque non cruetando ductu",
+        "year": "1713",
+        "school": "Martin-Luther-Universit\u00e4t Halle-Wittenberg",
+        "name": "Christian Hausen"
+    },
+    "47025": {
+        "title": "",
+        "year": "1781",
+        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen and Justus-Liebig-Universit\u00e4t Gie\u00dfen and Universit\u00e4t Erfurt",
+        "name": "Karl von Langsdorf"
+    },
+    "108266": {
+        "title": "",
+        "year": "1735",
+        "school": "Coll\u00e8ge Mazarin",
+        "name": "Jean d'Alembert"
+    },
+    "7862": {
+        "title": "Neuer Beweis der Gleichung $\\sum_{k=1}^{\\infty}\\frac{\\mu(k)}{k}=0$",
+        "year": "1899",
+        "school": "Universit\u00e4t Berlin",
+        "name": "Edmund Landau"
+    },
+    "7402": {
+        "title": "Generalem analyeseos applicationem ad ea quae geometriae altioris et mechanicae basis et fundamenta sunt e serie Tayloria deducit",
+        "year": "1823",
+        "school": "Philipps-Universit\u00e4t Marburg",
+        "name": "Julius Pl\u00fccker"
+    },
+    "31702": {
+        "title": "Poisson Processes Built Over Sigma-Finite Measure Spaces",
+        "year": "1980",
+        "school": "University of California, Berkeley",
+        "name": "Guillermo Grabinsky"
+    },
+    "108295": {
+        "title": "Recherches sur le calcul integral aux differences infiniment petites et aux differences finies",
+        "year": "1769",
+        "school": "Universit\u00e9 de Caen",
+        "name": "Pierre-Simon Laplace"
+    },
+    "6439": {
+        "title": "Isomorphisms of Rings of Operators",
+        "year": "1954",
+        "school": "The University of Chicago",
+        "name": "Jacob Feldman"
+    },
+    "17865": {
+        "title": "",
+        "year": "1800",
+        "school": "\u00c9cole Polytechnique",
+        "name": "Sim\u00e9on Poisson"
+    },
+    "17946": {
+        "title": "Partial Results on Fermat's Last Theorem, Exponent 5",
+        "year": "1827",
+        "school": "Rheinische Friedrich-Wilhelms-Universit\u00e4t Bonn",
+        "name": "Gustav Dirichlet"
+    },
+    "4642": {
+        "title": "De functionum analyticarum unius variabilis per series infinitas repraesentatione",
+        "year": "1870",
+        "school": "Humboldt-Universit\u00e4t zu Berlin",
+        "name": "Ferdinand Frobenius"
+    },
+    "128986": {
+        "title": "Disputatio medica inauguralis, sistens aegrum dysentericum",
+        "year": "1709",
+        "school": "Eberhard-Karls-Universit\u00e4t T\u00fcbingen",
+        "name": "Johann Planer"
+    },
+    "7401": {
+        "title": "\u00dcber die Transformation der allgemeinen Gleichung des zweiten Grades zwischen Linien-Koordinaten auf eine kanonische Form",
+        "year": "1868",
+        "school": "Rheinische Friedrich-Wilhelms-Universit\u00e4t Bonn",
+        "name": "C. Felix Klein"
+    },
+    "7863": {
+        "title": "\u00dcber die Darstellung von positiven, ganzen Zahlen durch die primitiven, bin\u00e4ren quadratischen Formen einer nicht-quadratischen Diskriminante",
+        "year": "1912",
+        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen",
+        "name": "I.  Paul Bernays"
+    },
+    "7486": {
+        "title": "Beitr\u00e4ge zur Theorie der Abel'schen Integrale",
+        "year": "1854",
+        "school": "Universit\u00e4t K\u00f6nigsberg",
+        "name": "Karl Weierstra\u00df"
+    },
+    "66476": {
+        "title": "Theoria radicum in aequationibus",
+        "year": "1739",
+        "school": "Universit\u00e4t Leipzig",
+        "name": "Abraham K\u00e4stner"
+    },
+    "7489": {
+        "title": "",
+        "year": "1912",
+        "school": "E\u00f6tv\u00f6s Lor\u00e1nd University",
+        "name": "Marcel Riesz"
+    },
+    "7404": {
+        "title": "\u00dcber unendlich kleine Bewegungen und \u00fcber Kraftsysteme bei allgemeiner projektivischer Ma\u00dfbestimmung",
+        "year": "1873",
+        "school": "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+        "name": "C. L. Ferdinand Lindemann"
+    },
+    "18230": {
+        "title": "Commentatio de ortibus et occasibus siderum apud auctores classicos commemoratis",
+        "year": "1786",
+        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen",
+        "name": "Johann Pfaff"
+    },
+    "65161": {
+        "title": "",
+        "year": "1765",
+        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen",
+        "name": "Georg Lichtenberg"
+    },
+    "29642": {
+        "title": "Methodi proiectionis orthographicae usum ad calculos parallacticos facilitandos explicavit simulque eclipsin solarem die",
+        "year": "1812",
+        "school": "Georg-August-Universit\u00e4t G\u00f6ttingen",
+        "name": "Christian Gerling"
     }
 }
