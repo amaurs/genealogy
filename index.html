@@ -92,6 +92,9 @@ text {
     var svg = svgContainer.append("g")
         .attr("transform", "translate(" + 0 + "," + 0 + ")");
 
+    var tagsContainer = svgContainer.append("g")
+        .attr("transform", "translate(" + 0 + "," + 0 + ")");
+
     function vh(v) {
         var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
         
@@ -105,7 +108,11 @@ text {
     }
 
 
+    var yAxis;
+    var gY;
+    var years;
 
+    var ticks;
 
     svgContainer
     .call(d3.zoom()
@@ -114,8 +121,15 @@ text {
 
     function zoom() {
         var event = d3.event;
-        console.log(event.transform)
+        console.log(event.transform);
         svg.attr("transform", d3.event.transform);
+
+        var new_yScale = d3.event.transform.rescaleY(years)
+  
+        ticks.attr('class', 'tag')
+            .attr("transform", function(d) {
+                return "translate(0," + new_yScale(+d) + ")";
+            });
     }
 
     var treemap = d3.tree().size([height, width]);
@@ -231,7 +245,7 @@ text {
 
         var y = d3.scaleLinear()
                   .domain([0, maxX])
-                  .range([0, 1000]);
+                  .range([0, 500]);
 
         var x = d3.scaleLinear()
                   .domain([0, maxY])
@@ -239,10 +253,36 @@ text {
 
         var node = svg.selectAll('g.node')
             .data(nodes, function(d) { return d.id });
+        
 
-            console.log(node);
+        yAxis = d3.axisLeft(y);
+
+        var tags = [1700, 1750, 1800, 1850, 1900, 1950, 2000];
+         
 
 
+        years = d3.scaleLinear()
+                  .domain([1700, 2000])
+                  .range([0, maxY * 2]);
+        
+        ticks = tagsContainer.selectAll('g')
+            .data(tags)
+            .enter()
+            .append('g');
+
+
+            ticks.attr('class', 'tag')
+            .attr("transform", function(d) {
+                return "translate(0," + years(+d) + ")";
+            })
+            .append('text')
+            .text(function(d) {
+                return d});
+
+            // Draw Axis
+        gY = tagsContainer.append("g")
+            .attr("class", "axis axis--y")
+            .call(yAxis);
 
         var nodeEnter = node.enter().append('g')
             .attr('class', 'node')
