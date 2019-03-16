@@ -25,15 +25,15 @@
 }
 
 .name {
-  font-size: 8px
+  font-size: 14px
 }
 
 .university {
-  font-size: 4px 
+  font-size: 12px 
 }
 
 .tag text{
-    font-size: 42px;
+    font-size: 62px;
     opacity: 0.5;
     fill: red;
     font-family: "Futura";
@@ -42,11 +42,6 @@ body {
     margin: 0;
     padding: 0;
 }
-svg {
-  border-style: solid;
-  border-color: green;
-}
-
 
 text {
   font-weight: 300;
@@ -65,28 +60,27 @@ text {
   stroke-width: 1.5px;
 }
 
-
-.svg-container {
-}
-
 .svg-content { 
     text-align: center;
 }
 
+
+
 </style>
 </head>
 <body class="svg-container">
+
+
+<div>
 <script>
-    var width = vw(100),
-        height = vh(100),
-        centerX = 0 + width / 2,
-        centerY = 0 + height / 2;
+
+
     var margin = {top: 20, right: 90, bottom: 30, left: 90};
     
     var svgContainer = d3.select("body")
             .append("svg")
             .attr("class", "svg-content")
-            .attr('viewBox', "0 0 " + 2500 + " " + 2500 + "")
+            .attr('viewBox', "0 0 " + 2000 + " " + 2500 + "")
             .attr('preserveAspectRatio', "xMidYMid slice");
 
     var svg = svgContainer.append("g")
@@ -100,60 +94,19 @@ text {
         
         return (v * h) / 100;
     }
-
     function vw(v) {
         var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         
         return (v * w) / 100;
     }
 
-
-    var yAxis;
-    var gY;
-    var years;
-
-    var ticks;
-
-    svgContainer
-    .call(d3.zoom()
-        .scaleExtent([1, 8])
-        .on("zoom", zoom));
-
-    function zoom() {
-        var event = d3.event;
-        console.log(event.transform);
-        svg.attr("transform", d3.event.transform);
-
-        var new_yScale = d3.event.transform.rescaleY(years)
-  
-        ticks.attr('class', 'tag')
-            .attr("transform", function(d) {
-                return "translate(0," + new_yScale(+d) + ")";
-            });
-    }
-
-    var treemap = d3.tree().size([height, width]);
-    
-    var i = 0,
-        duration = 750,
-        root;
-
-    var nodez;
-
-    var links;
-
-
     d3.json("nodes.json", function(error, nodes) {
         d3.json("edges.json", function(error, edges) {
-
             var g = new dagre.graphlib.Graph();
             g.setGraph({});
             g.setDefaultEdgeLabel(function() { return {}; });
             var entries = Object.entries(nodes);
-            entries = entries.filter(function(entry){
-                var value = entry[1];
-                return !(value.year == "" || value.name == "" || value.school == "");
-            });
+            
             entries.forEach(function([key, value]){
                 if(value){
                     g.setNode(key, value);
@@ -166,177 +119,108 @@ text {
             })
             dagre.layout(g);
 
-            console.log(graphlib.json.write(g));
-            console.log(g);
-            var xs = g.nodes().map(function(node) {
+            var nodez = g.nodes().map(function(node) {
                 var label = g.node(node);
-                return label.x;
-            });
-
-            var ys = g.nodes().map(function(node) {
-                var label = g.node(node);
-                return label.y;
-            });
-
-            console.log(Math.min(...xs));
-            console.log(Math.min(...ys));
-
-            console.log(Math.max(...xs));
-            console.log(Math.max(...ys));
-
-
-            nodez = g.nodes().map(function(node) {
-                var label = g.node(node);
-
-                label.id = node;
+                label.id = parseInt(node);
+                label.year = parseInt(label.year);
                 return label;
             });
 
-            
 
-            var maxX = Math.max(...xs);
-            var maxY = Math.max(...ys);
+            var yearMin = d3.min(nodez, function(d) { return d.year; }),
+                yearMax = d3.max(nodez, function(d) { return d.year; });
 
 
-            var years = nodez.map(function(d){ return parseInt(d.year) })
-                       .filter(function(year) { return Number.isInteger(year) });
+            var years = d3.scaleLinear()
+                      .domain([yearMin, yearMax])
+                      .range([0, vh(100)]);
 
-            var min = Math.min(...years);
-            var max = Math.max(...years);
-
-            var xs = g.nodes().map(function(node) {
-                var label = g.node(node);
-                return label.x;
+            nodez.forEach(function(d){  
+                d.y = years(d.year);  
             });
-            maxX = Math.max(...xs);
-
-            var y = d3.scaleLinear()
-                  .domain([min, max])
-                  .range([0, height]);
-
-            nodez.forEach(function(d){  d.y = y(d.year); console.log(d.y + " " + d.year) });
-
-            links = g.edges().map(function(edge) {
-                var v = edge.v;
-                var w = edge.w;
+            
+            var links = g.edges().map(function(edge) {
 
                 var link = {};
 
-                var source = g.node(v);
-                var target = g.node(w);
+                var source = g.node(edge.v);
+                var target = g.node(edge.w);
 
                 link.source = {x:source.x, y:source.y};
                 link.target = {x:target.x, y:target.y};
 
-                link.sourceId = v;
-                link.targetId = w;
+                link.sourceId = edge.v;
+                link.targetId = edge.w;
 
                 return link;
             });
 
+            var tags = [1700, 1750, 1800, 1850, 1900, 1950, 2000].map(function(d) {
+                return { x: 0, y: years(d), tag: d };
+            });
 
-            renderD3(maxX, maxY, nodez, links)
+            renderD3(nodez, links, tags, years)
         });
     });
 
-    function renderD3(maxX, maxY, nodes, links){
+    function renderD3(nodes, links, tags, years){
+
+        var height = vh(100);
+        var width = vw(100);
 
 
+        var xMin = d3.min(nodes, function(d) { return d.x; }),
+            xMax = d3.max(nodes, function(d) { return d.x; }),
+            yMin = d3.min(nodes, function(d) { return d.y; }),
+            yMax = d3.max(nodes, function(d) { return d.y; }),
+            yearMin = d3.min(nodes, function(d) { return d.year; }),
+            yearMax = d3.max(nodes, function(d) { return d.year; });
 
-        var y = d3.scaleLinear()
-                  .domain([0, maxX])
-                  .range([0, 500]);
+        var duration = 750;
 
         var x = d3.scaleLinear()
-                  .domain([0, maxY])
-                  .range([0, 2500]);
+                  .domain([xMin, xMax])
+                  .range([0, width]);
+
+        
 
         var node = svg.selectAll('g.node')
             .data(nodes, function(d) { return d.id });
         
 
-        yAxis = d3.axisLeft(y);
+        // This part paints the years in the left.
 
-        var tags = [1700, 1750, 1800, 1850, 1900, 1950, 2000];
-         
-
-
-        years = d3.scaleLinear()
-                  .domain([1700, 2000])
-                  .range([0, maxY * 2]);
         
-        ticks = tagsContainer.selectAll('g')
+
+        var ticks = tagsContainer.selectAll('g')
             .data(tags)
             .enter()
             .append('g');
 
 
             ticks.attr('class', 'tag')
-            .attr("transform", function(d) {
-                return "translate(0," + years(+d) + ")";
-            })
+            .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")" })
             .append('text')
-            .text(function(d) {
-                return d});
+            .text(function(d) { return d.tag });
 
-            // Draw Axis
-        gY = tagsContainer.append("g")
-            .attr("class", "axis axis--y")
-            .call(yAxis);
+
+        // This part paints a container for each node.
 
         var nodeEnter = node.enter().append('g')
             .attr('class', 'node')
             .attr('id', function(d) { return d.id} )
             .attr("transform", function(d) {
-                return "translate(" + x(+d.x) + "," + y(+d.y) + ")";
+                return "translate(" + x(+d.x) + "," + d.y + ")";
             });
 
         nodeEnter.call(d3.drag().on("drag", dragged));
 
-        function dragged(d) {
-            d.x = d3.event.x, d.y = d3.event.y;
-            
-
-            console.log(this);
-            console.log("translate(" + x(+d.x) + "," + y(+d.y) + ")");
 
 
-            var transform = d3.select(this).attr("transform");
-
-
-            var id = d3.select(this).attr("id");
-
-            transform = transform.replace("translate(", "");
-
-            d3.select(this).attr("transform", function(d) {
-                return "translate(" + x(+d.x) + "," + transform.split(",")[1];
-            })
-
-            links.forEach(function(link){
-                if(link.sourceId == id){
-                    link.source.x = +d.x;
-                }
-                if(link.targetId == id){
-                    link.target.x = +d.x;
-                }
-            });
-
-            var link = svg.selectAll('path.link')
-                .data(links);
-
-
-            link.transition()
-                .duration(0)
-                .attr('d', function(d){
-                    return diagonal(d.source, d.target) });
-
-
-        }
+        // Adding text to the nodes.
 
         var container = nodeEnter.append("a")
             .attr("xlink:href", function(d){ return "https://www.genealogy.math.ndsu.nodak.edu/id.php?id=" + d.id });
-
-
 
         var text = container.append('text')
             .attr("x", function(d) {
@@ -348,7 +232,7 @@ text {
 
         text.append('tspan')
             .attr('class', 'name')
-            .text(function(d) { return d.name + " " + d.year})
+            .text(function(d) { return d.name })
             .attr('x', 0);
             ;
 
@@ -357,7 +241,6 @@ text {
             .text(function(d) { return d.school })
             .attr('dy', '1em')
             .attr('x', 0);
-
 
         var link = svg.selectAll('path.link')
             .data(links);
@@ -368,12 +251,54 @@ text {
                 return diagonal(d.source, d.target)
             });
 
+        svgContainer
+            .call(d3.zoom()
+                .scaleExtent([1, 5])
+                .on("zoom", zoom));
+
         function diagonal(s, d) {
-            path = `M ${x(s.x)} ${y(s.y)}
-                    C ${(x(s.x) + x(d.x)) / 2} ${y(d.y)},
-                      ${(x(s.x) + x(d.x)) / 2} ${y(s.y)},
-                      ${x(d.x)} ${y(d.y)}`
+            path = `M ${x(s.x)} ${s.y}
+                    C ${(x(s.x) + x(d.x)) / 2} ${d.y},
+                      ${(x(s.x) + x(d.x)) / 2} ${s.y},
+                      ${x(d.x)} ${d.y}`
             return path
+        }
+
+        // With this function I control the dragging of the nodes TODO: look for a cleaner way to extract x coordinate.
+        function dragged(d) {
+            d.x = d3.event.x, 
+            d.y = d3.event.y;
+            var transform = d3.select(this).attr("transform");
+            var id = d3.select(this).attr("id");
+            transform = transform.replace("translate(", "");
+            d3.select(this).attr("transform", function(d) {
+                return "translate(" + x(+d.x) + "," + transform.split(",")[1];
+            })
+            links.forEach(function(link){
+                if(link.sourceId == id){
+                    link.source.x = +d.x;
+                }
+                if(link.targetId == id){
+                    link.target.x = +d.x;
+                }
+            });
+
+            var link = svg.selectAll('path.link')
+                .data(links);
+            link.transition()
+                .duration(0)
+                .attr('d', function(d){
+                    return diagonal(d.source, d.target) });
+        }
+
+        function zoom() {
+            var newYears = d3.event.transform.rescaleY(years);
+            svg.attr("transform", d3.event.transform);
+            ticks.attr('class', 'tag')
+                .attr("transform", function(d) {
+                    return "translate(" + d.x + "," + newYears(+d.tag) + ") " + "scale(" + d3.event.transform.k + ")";
+                });
+            
         }
 
     }
