@@ -104,6 +104,19 @@ a:active {
   color: gray;
 }
 
+
+.info {
+    background: white;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black ;
+}
+
+
+.hide .hideable {
+    display: none;
+}
+
 </style>
 </head>
 <body class="svg-container">
@@ -258,7 +271,10 @@ a:active {
         // Adding text to the nodes.
 
         var container = nodeEnter.append("a")
-            .attr("xlink:href", function(d){ return "https://www.genealogy.math.ndsu.nodak.edu/id.php?id=" + d.id });
+            .attr('class', 'info hide')
+            .attr("xlink:href", function(d){ return "https://www.genealogy.math.ndsu.nodak.edu/id.php?id=" + d.id })
+            .on("mouseover", handleMouseOver)
+              .on("mouseout", handleMouseOut);;
 
         var text = container.append('text')
             .attr("x", function(d) {
@@ -277,6 +293,18 @@ a:active {
         text.append('tspan')
             .attr('class', 'university')
             .text(function(d) { return d.school })
+            .attr('dy', '1em')
+            .attr('x', 0);
+
+        text.append('tspan')
+            .attr('class', 'university hideable')
+            .text(function(d) { return d.title })
+            .attr('dy', '1em')
+            .attr('x', 0);
+
+        text.append('tspan')
+            .attr('class', 'university hideable')
+            .text(function(d) { return d.year })
             .attr('dy', '1em')
             .attr('x', 0);
 
@@ -330,6 +358,8 @@ a:active {
                     return diagonal(d.source, d.target) });
         }
 
+        https://amaurs.github.io/genealogy/
+
         function zoom() {
             var newYears = d3.event.transform.rescaleY(years);
             svg.attr("transform", d3.event.transform);
@@ -338,6 +368,19 @@ a:active {
                     return "translate(" + d.x + "," + newYears(+d.tag) + ") " + "scale(" + d3.event.transform.k + ")";
                 });
             
+        }
+
+              // Create Event Handlers for mouse
+        function handleMouseOver(d, i) {  // Add interactivity
+            d3.select(this).attr("class", "info")
+            console.log("Mouse over");
+            console.log(d);
+        }
+
+        function handleMouseOut(d, i) {
+            d3.select(this).attr("class", "info hide")
+            console.log("Mouse out");
+            console.log(d);
         }
 
     }
