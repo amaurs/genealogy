@@ -36,16 +36,16 @@
     font-size: 62px;
     opacity: 0.5;
     fill: red;
-    font-family: "Futura";
+    
 }
 body {    
     margin: 0;
     padding: 0;
+    font-family: "Futura";
 }
 
 text {
-  font-weight: 300;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;=
   font-size: 14px;
 }
 
@@ -65,13 +65,51 @@ text {
 }
 
 
+.note {
+    position: fixed;
+    width: 30%;
+    right: 20px;
+    bottom: 20px;
+    background: white;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black ;
+}
+
+.note p {
+    padding: 20px;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: red;
+}
+
+/* mouse over link */
+a:hover {
+  color: gray;
+}
+
+/* selected link */
+a:active {
+  color: gray;
+}
 
 </style>
 </head>
 <body class="svg-container">
-
-
-<div>
+<div class="note">
+    <p>This map was made with information from the <a href="https://www.genealogy.math.ndsu.nodak.edu/">Mathematics Genealogy Project</a> in an effort to visualize the origins of a certain mathematician. While horizonal position is meaninless, vertical position is related to the year in which the researcher obtained his diploma. In the sake of simplicity, every node for which the year is previous to 1700 was omited. Additionally every node with no infomation about the year or the university was also omited.</p>
+</div>
 <script>
 
 
@@ -271,6 +309,7 @@ text {
             var transform = d3.select(this).attr("transform");
             var id = d3.select(this).attr("id");
             transform = transform.replace("translate(", "");
+
             d3.select(this).attr("transform", function(d) {
                 return "translate(" + x(+d.x) + "," + transform.split(",")[1];
             })
